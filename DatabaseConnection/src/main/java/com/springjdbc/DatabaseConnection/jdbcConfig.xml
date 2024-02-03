@@ -11,13 +11,19 @@
        http://www.springframework.org/schema/util
        http://www.springframework.org/schema/util/spring-util.xsd">
 	
-	<bean class="org.springframework.jdbc.datasource" name="dataSource" 
-	      p:driverClassName="com.mysql.jdbc.Driver" 
-	      p:url="jdbc:mysql://localhost:3306/sql_db"
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="dataSource" 
+	      p:driverClassName="com.mysql.cj.jdbc.Driver" 
+	      p:url="jdbc:mysql://localhost:3306/mydb"
 	      p:username="root"
-	      p:password="Root123#" />
+	      p:password="root" />
 	      
-	<bean class="org.springframework.jdbc.core" name="jdbcTemplate" 
+	<bean class="org.springframework.jdbc.core.JdbcTemplate" name="jdbcTemplate" 
 	      p:dataSource-ref="dataSource" />
+	      
+	<bean class="com.springjdbc.DatabaseConnection.dao.StudentDaoImpl" name="studentDao" 
+	      p:jdbcTemplate-ref="jdbcTemplate" p:student-ref="student" />
+	      
+	<bean class="com.springjdbc.DatabaseConnection.entity.Student" name="student" 
+	      p:id="88" p:name="Rishav" />
 	      
 </beans>
