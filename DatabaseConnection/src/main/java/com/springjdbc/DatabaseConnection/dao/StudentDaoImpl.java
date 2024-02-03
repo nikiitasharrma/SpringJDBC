@@ -2,15 +2,20 @@ package com.springjdbc.DatabaseConnection.dao;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import com.springjdbc.DatabaseConnection.entity.Student;
 
+@Component("studentDao")
 public class StudentDaoImpl implements StudentDao {
 	
+	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
+	@Autowired
 	private Student student;
 
 	@Override
