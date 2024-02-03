@@ -12,7 +12,9 @@ public class App
         
         StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
         
-        int result = studentDao.insert();
+//        int result = studentDao.insert();
+        
+        int result = studentDao.update();
         
         System.out.println("Number of rows affected: " + result);
     }

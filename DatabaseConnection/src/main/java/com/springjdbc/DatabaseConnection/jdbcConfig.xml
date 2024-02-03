@@ -24,6 +24,6 @@
 	      p:jdbcTemplate-ref="jdbcTemplate" p:student-ref="student" />
 	      
 	<bean class="com.springjdbc.DatabaseConnection.entity.Student" name="student" 
-	      p:id="88" p:name="Rishav" />
+	      p:id="88" p:name="Rishabh" />
 	      
 </beans>
