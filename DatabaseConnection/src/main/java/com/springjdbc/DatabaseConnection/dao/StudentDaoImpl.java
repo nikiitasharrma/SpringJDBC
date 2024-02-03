@@ -58,6 +58,17 @@ public class StudentDaoImpl implements StudentDao {
 		
 	}
 
+
+	@Override
+	public List<Student> selectAllStudents() {
+		
+		String query = "SELECT * FROM mytable";
+		
+		List<Student> students = jdbcTemplate.query(query, new RowMapperImpl());
+		
+		return students;
+	}
+
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemplate;
 	}

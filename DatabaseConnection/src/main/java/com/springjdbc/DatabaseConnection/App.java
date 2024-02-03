@@ -1,5 +1,7 @@
 package com.springjdbc.DatabaseConnection;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.springjdbc.DatabaseConnection.dao.StudentDao;
@@ -19,9 +21,11 @@ public class App
         
 //        int result = studentDao.delete();
         
-        Student student = studentDao.selectStudent();
+//        Student student = studentDao.selectStudent();
+        
+        List<Student> students = studentDao.selectAllStudents();
         
 //        System.out.println("Number of rows affected: " + result);
-        System.out.println(student);
+        System.out.println(students);
     }
 }
