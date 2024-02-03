@@ -3,6 +3,7 @@ package com.springjdbc.DatabaseConnection;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.springjdbc.DatabaseConnection.dao.StudentDao;
+import com.springjdbc.DatabaseConnection.entity.Student;
 
 public class App 
 {
@@ -16,8 +17,11 @@ public class App
         
 //        int result = studentDao.update();
         
-        int result = studentDao.delete();
+//        int result = studentDao.delete();
         
-        System.out.println("Number of rows affected: " + result);
+        Student student = studentDao.selectStudent();
+        
+//        System.out.println("Number of rows affected: " + result);
+        System.out.println(student);
     }
 }
