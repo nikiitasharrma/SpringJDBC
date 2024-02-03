@@ -14,7 +14,9 @@ public class App
         
 //        int result = studentDao.insert();
         
-        int result = studentDao.update();
+//        int result = studentDao.update();
+        
+        int result = studentDao.delete();
         
         System.out.println("Number of rows affected: " + result);
     }

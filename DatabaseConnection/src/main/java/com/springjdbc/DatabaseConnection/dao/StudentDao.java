@@ -6,4 +6,6 @@ public interface StudentDao {
 	
 	int update();
 	
+	int delete();
+	
 }
